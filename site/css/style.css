@@ -442,3 +442,8 @@ input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="
   .dash { padding: var(--s-5); }
   .kpis, .ledger { grid-template-columns: 1fr; }
 }
+
+/* Spam trap: off-screen for people (and screen readers); bots fill it in */
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-status.error { background: rgba(215, 0, 21, 0.08); color: #b00012; }
+.btn[disabled] { opacity: 0.6; cursor: progress; }

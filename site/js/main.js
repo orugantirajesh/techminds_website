@@ -40,10 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
     revealEls.forEach((el) => el.classList.add("in"));
   }
 
-  // Contact form: validate, then open the visitor's email app with the message filled in.
+  // Contact form: validate in the browser, then send to our own server, which emails the enquiry.
   const form = document.getElementById("contact-form");
   if (form) {
     const status = document.getElementById("form-status");
+    const button = form.querySelector("button[type=submit]");
+    const startedAt = Date.now();
     const showError = (field, message) => {
       const err = document.getElementById(`${field.id}-error`);
       field.setAttribute("aria-invalid", message ? "true" : "false");
@@ -54,32 +56,50 @@ document.addEventListener("DOMContentLoaded", () => {
       if (field.validity.typeMismatch) return "Please enter a valid email address.";
       return "";
     };
-    form.querySelectorAll("input, select, textarea").forEach((field) => {
+    const say = (text, isError) => {
+      status.textContent = text;
+      status.classList.toggle("error", Boolean(isError));
+      status.classList.add("show");
+      status.focus();
+    };
+    const fields = form.querySelectorAll("input:not([name=website]), select, textarea");
+    fields.forEach((field) => {
       field.addEventListener("blur", () => { if (field.required || field.value) showError(field, check(field)); });
     });
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       let firstInvalid = null;
-      form.querySelectorAll("input, select, textarea").forEach((field) => {
+      fields.forEach((field) => {
         const msg = check(field);
         showError(field, msg);
         if (msg && !firstInvalid) firstInvalid = field;
       });
       if (firstInvalid) { firstInvalid.focus(); return; }
 
-      const v = (id) => document.getElementById(id).value.trim();
-      const service = form.service.options[form.service.selectedIndex].text;
-      const subject = `Project enquiry — ${service}${v("company") ? " — " + v("company") : ""}`;
-      const details = [`Name: ${v("name")}`, `Email: ${v("email")}`];
-      if (v("company")) details.push(`Company: ${v("company")}`);
-      if (v("phone")) details.push(`Phone: ${v("phone")}`);
-      details.push(`Service: ${service}`);
-      const body = `${details.join("\n")}\n\n${v("message")}`;
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      status.textContent = `Your email app should now open with your message ready — just press Send. ` +
-        `If nothing opened, email us directly at ${CONTACT_EMAIL}.`;
-      status.classList.add("show");
-      status.focus();
+      const payload = Object.fromEntries(new FormData(form).entries());
+      payload.started = startedAt;
+      button.disabled = true;
+      const label = button.textContent;
+      button.textContent = "Sending…";
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.ok) {
+          form.reset();
+          say("Thanks — your message has been sent. We’ll be in touch within one business day.");
+        } else {
+          say(`${data.error || "We couldn’t send your message just now."} You can also email us at ${CONTACT_EMAIL}.`, true);
+        }
+      } catch {
+        say(`We couldn’t reach our server. Please try again, or email us at ${CONTACT_EMAIL}.`, true);
+      } finally {
+        button.disabled = false;
+        button.textContent = label;
+      }
     });
   }
 });

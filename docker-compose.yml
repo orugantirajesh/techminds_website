@@ -10,3 +10,27 @@ services:
       - "traefik.http.routers.techminds.entrypoints=websecure"
       - "traefik.http.routers.techminds.tls.certresolver=letsencrypt"
       - "traefik.http.services.techminds.loadbalancer.server.port=80"
+
+  # Contact form -> email. Reached at /api/... on the same domains.
+  contact:
+    build: ./contact-api
+    restart: unless-stopped
+    secrets:
+      - contact_env      # SMTP_USER / SMTP_APP_PASSWORD, from ./contact.env (chmod 600, not in git)
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 128m
+    pids_limit: 64
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.techminds-contact.rule=(Host(`techmindsconsulting.com.au`) || Host(`www.techmindsconsulting.com.au`) || Host(`rajeshoruganti.tech`) || Host(`www.rajeshoruganti.tech`)) && PathPrefix(`/api/`)"
+      - "traefik.http.routers.techminds-contact.priority=100"
+      - "traefik.http.routers.techminds-contact.entrypoints=websecure"
+      - "traefik.http.routers.techminds-contact.tls.certresolver=letsencrypt"
+      - "traefik.http.services.techminds-contact.loadbalancer.server.port=8080"
+
+secrets:
+  contact_env:
+    file: ./contact.env
