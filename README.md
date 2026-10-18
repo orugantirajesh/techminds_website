@@ -18,6 +18,7 @@ docker-compose.yml   nginx container + Traefik routing on the VPS
 Served from the Hostinger VPS by an `nginx:alpine` container behind Traefik, which handles
 HTTPS (Let's Encrypt) for the domains in `docker-compose.yml`:
 
+- https://techmindsconsulting.com.au (and `www.`): DNS at Hostinger, A record → VPS 72.60.192.209
 - https://rajeshoruganti.tech (and `www.`)
 
 ## Preview locally
