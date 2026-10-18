@@ -26,7 +26,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.techminds-contact.rule=(Host(`techmindsconsulting.com.au`) || Host(`www.techmindsconsulting.com.au`) || Host(`rajeshoruganti.tech`) || Host(`www.rajeshoruganti.tech`)) && PathPrefix(`/api/`)"
-      - "traefik.http.routers.techminds-contact.priority=100"
+      - "traefik.http.routers.techminds-contact.priority=1000"  # must beat the site router (Traefik default = rule length)
       - "traefik.http.routers.techminds-contact.entrypoints=websecure"
       - "traefik.http.routers.techminds-contact.tls.certresolver=letsencrypt"
       - "traefik.http.services.techminds-contact.loadbalancer.server.port=8080"
