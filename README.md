@@ -1,40 +1,65 @@
 # TechMinds website
 
-Static website for TechMinds (software design, development and cloud services): four HTML pages,
-one stylesheet, a little JavaScript (including a 3D hero on the home page) and two images. No
-build step.
+Website for TechMinds Consulting, which offers AI automation services. It's plain HTML, CSS and a
+little JavaScript, with no build step, plus a small contact-form mail service.
 
 ```
-site/
-  index.html  services.html  about.html  contact.html
-  css/style.css
-  js/main.js  js/hero-3d.js
-  assets/logo.png  assets/ceo-photo.jpg
-docker-compose.yml   nginx container + Traefik routing on the VPS
+site/                   the website (served as-is by nginx)
+  index.html  use-cases.html  services.html  about.html  contact.html
+  css/style.css  js/main.js  assets/
+contact-api/            contact form -> email (Python standard library only)
+  app.py  test_app.py  Dockerfile
+docker-compose.yml      nginx + contact service, routed by Traefik on the VPS
 ```
 
 ## Live
 
-Served from the Hostinger VPS by an `nginx:alpine` container behind Traefik, which handles
-HTTPS (Let's Encrypt) for the domains in `docker-compose.yml`:
+Hostinger VPS, behind Traefik (HTTPS via Let's Encrypt):
 
-- https://techmindsconsulting.com.au (and `www.`): DNS at Hostinger, A record → VPS 72.60.192.209
+- https://techmindsconsulting.com.au (and `www.`): DNS at Hostinger, A record → 72.60.192.209
 - https://rajeshoruganti.tech (and `www.`)
+
+`/api/` on those domains goes to the contact service; everything else goes to nginx.
+
+## Contact form
+
+The form posts JSON to `/api/contact`. The service checks the input, drops spam (a hidden
+honeypot field and too-fast submissions) and limits sending to 5 an hour per visitor and 50 a
+day. It then emails techmindsconsulting@gmail.com through Gmail, with Reply-To set to the visitor.
+
+Its Gmail credentials live only on the server in `/docker/techminds/contact.env`, which is
+mode 600, owned by uid 65534 and not in git:
+
+```
+SMTP_USER=techmindsconsulting@gmail.com
+SMTP_APP_PASSWORD=<16-character Gmail app password>
+```
+
+To change the password: edit that file, then run `docker compose restart contact`. To revoke it,
+go to https://myaccount.google.com/apppasswords.
+
+Tests: `cd contact-api && python3 -m unittest -v test_app`
 
 ## Preview locally
 
 ```bash
-cd site && python3 -m http.server 8000   # then open http://localhost:8000
+cd site && python3 -m http.server 8000   # open http://localhost:8000
 ```
+
+The form needs the contact service, so locally it shows "couldn't reach our server".
 
 ## Deploy
 
-The server copy lives in `/docker/techminds` on the VPS (`ssh hostinger-vps`). Nginx serves
-`site/` read-only, so copying the files is enough; no restart needed:
+The server copy is in `/docker/techminds` (`ssh hostinger-vps`). Website files are updated in
+place, because nginx serves the folder directly, so no restart is needed:
 
 ```bash
-rsync -av --delete site/ hostinger-vps:/docker/techminds/site/
+tar -czf - -C site . | ssh hostinger-vps 'T=$(mktemp -d); tar -xzf - -C "$T"; \
+  rsync -a --delete --no-owner --no-group --chmod=D755,F644 "$T"/ /docker/techminds/site/; rm -rf -- "$T"'
 ```
 
-Change `docker-compose.yml` (e.g. to add a domain) only together with a restart on the server:
-`cd /docker/techminds && docker compose up -d`.
+If you change `css/style.css` or `js/main.js`, bump the `?v=` number in the pages' links so
+browsers fetch the new file. Backups of earlier versions are in `/docker/techminds/backups/`.
+
+Changes to `contact-api/` or `docker-compose.yml`: copy them to the server, then run
+`docker compose up -d --build contact`.
