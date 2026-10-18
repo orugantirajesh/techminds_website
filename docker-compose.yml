@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     volumes:
       - ./site:/usr/share/nginx/html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/security-headers.inc:/etc/nginx/conf.d/security-headers.inc:ro
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.techminds.rule=Host(`techmindsconsulting.com.au`) || Host(`www.techmindsconsulting.com.au`) || Host(`rajeshoruganti.tech`) || Host(`www.rajeshoruganti.tech`)"
