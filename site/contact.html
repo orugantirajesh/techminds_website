@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — TechMinds Consulting</title>
-  <meta name="description" content="Book a free consultation with TechMinds Consulting for software design, development or cloud services." />
+  <meta name="description" content="Book a free call with TechMinds Consulting to find what in your business can be automated with AI." />
   <meta name="theme-color" content="#fbfbfd" />
   <link rel="icon" href="assets/logo.png" />
   <meta property="og:title" content="Contact — TechMinds Consulting" />
-  <meta property="og:description" content="Book a free consultation with TechMinds Consulting for software design, development or cloud services." />
+  <meta property="og:description" content="Book a free call with TechMinds Consulting to find what in your business can be automated with AI." />
   <meta property="og:image" content="https://techmindsconsulting.com.au/assets/logo.png" />
   <link rel="canonical" href="https://techmindsconsulting.com.au/contact.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,12 +27,13 @@
       <nav aria-label="Main">
         <ul class="nav-links" id="nav-links">
           <li><a href="index.html">Home</a></li>
+          <li><a href="use-cases.html">Use cases</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <a href="contact.html" class="btn btn-primary nav-cta">Book a consultation</a>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a free call</a>
       <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
@@ -45,7 +46,7 @@
       <div class="container">
         <span class="eyebrow reveal">Contact</span>
         <h1 class="display reveal reveal-delay-1">Let’s talk.</h1>
-        <p class="lede reveal reveal-delay-2">Tell us what you’re building. We’ll reply within one business day to set up a free discovery call.</p>
+        <p class="lede reveal reveal-delay-2">Tell us the task that eats your week. We’ll reply within one business day to set up a free call.</p>
       </div>
     </section>
 
@@ -61,14 +62,14 @@
                 <span class="error" id="name-error"></span>
               </div>
               <div class="field">
-                <label for="email">Work email <span class="req">(required)</span></label>
+                <label for="email">Email <span class="req">(required)</span></label>
                 <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" />
                 <span class="error" id="email-error"></span>
               </div>
             </div>
             <div class="field-row">
               <div class="field">
-                <label for="company">Company</label>
+                <label for="company">Business name</label>
                 <input id="company" name="company" type="text" autocomplete="organization" />
               </div>
               <div class="field">
@@ -77,20 +78,22 @@
               </div>
             </div>
             <div class="field">
-              <label for="service">What do you need help with? <span class="req">(required)</span></label>
+              <label for="service">What would you like to automate? <span class="req">(required)</span></label>
               <select id="service" name="service" required aria-describedby="service-error">
-                <option value="" disabled selected>Choose a service</option>
-                <option value="software-design">Software Design</option>
-                <option value="software-development">Software Development</option>
-                <option value="cloud-services">Cloud Services</option>
-                <option value="not-sure">Not sure yet</option>
+                <option value="" disabled selected>Choose one</option>
+                <option value="audit">Not sure yet — free automation audit</option>
+                <option value="email-whatsapp">Email alerts on WhatsApp</option>
+                <option value="invoices-xero">Invoices, receipts &amp; Xero</option>
+                <option value="whatsapp-assistant">A WhatsApp assistant</option>
+                <option value="reports">Reports &amp; daily digests</option>
+                <option value="other">Something else</option>
               </select>
               <span class="error" id="service-error"></span>
             </div>
             <div class="field">
-              <label for="message">Project details <span class="req">(required)</span></label>
+              <label for="message">Tell us about it <span class="req">(required)</span></label>
               <textarea id="message" name="message" required aria-describedby="message-error message-hint"></textarea>
-              <span class="muted" id="message-hint" style="font-size: 13px;">A few lines on what you’re trying to build or fix is plenty.</span>
+              <span class="muted" id="message-hint" style="font-size: 13px;">Which task takes too long, and which tools you use (e.g. Gmail, Xero, WhatsApp).</span>
               <span class="error" id="message-error"></span>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Send message</button>
@@ -109,8 +112,8 @@
           <h2 style="margin-top: 40px;">What happens next</h2>
           <ol class="next-steps">
             <li>We reply within one business day.</li>
-            <li>A short discovery call to understand scope.</li>
-            <li>A fixed-scope proposal with timeline and price.</li>
+            <li>A free call to find your quick wins.</li>
+            <li>A fixed-price plan for your first automation.</li>
           </ol>
         </aside>
       </div>
@@ -122,19 +125,21 @@
       <div class="footer-top">
         <div class="footer-brand">
           <img src="assets/logo.png" alt="TechMinds Consulting" width="102" height="28" loading="lazy" />
-          <p>Software design, development and cloud services for growing businesses — designed, built and run by one accountable team.</p>
+          <p>AI automation for growing businesses — emails, invoices, bookings and alerts handled automatically, with everything in one place.</p>
         </div>
         <div>
-          <h2>Services</h2>
+          <h2>Automations</h2>
           <ul>
-            <li><a href="services.html#software-design">Software Design</a></li>
-            <li><a href="services.html#software-development">Software Development</a></li>
-            <li><a href="services.html#cloud-services">Cloud Services</a></li>
+            <li><a href="use-cases.html#email-to-whatsapp">Email to WhatsApp</a></li>
+            <li><a href="use-cases.html#invoice-to-xero">Invoices to Xero</a></li>
+            <li><a href="use-cases.html#whatsapp-assistant">WhatsApp assistants</a></li>
+            <li><a href="use-cases.html">All use cases</a></li>
           </ul>
         </div>
         <div>
           <h2>Company</h2>
           <ul>
+            <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
