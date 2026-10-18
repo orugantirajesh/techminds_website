@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechMinds — Software Design, Development &amp; Cloud Services</title>
+  <meta name="description" content="TechMinds is an IT consulting firm specializing in software design, custom development, and cloud services for growing businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js" } }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-row">
+      <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="contact.html" class="btn btn-ghost">Get a Quote</a>
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">IT Consulting, Done Properly</span>
+        <h1>Software and cloud<br />built by <span class="accent">senior engineers</span>, not a sales pipeline.</h1>
+        <p class="lede">TechMinds designs, builds, and ships custom software — and runs the cloud infrastructure underneath it — for businesses that need technology to actually work.</p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+          <a href="services.html" class="btn btn-ghost">Explore Services →</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>Design → Build → Run</strong><span>End-to-end delivery</span></div>
+          <div><strong>AWS · Azure · GCP</strong><span>Cloud-native by default</span></div>
+          <div><strong>Fixed-scope</strong><span>No surprise invoices</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" id="hero-visual">
+        <div class="hero-visual-fallback" aria-hidden="true"></div>
+        <canvas id="hero-3d-canvas" aria-hidden="true"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <div class="logo-strip">
+    <div class="container">
+      <span class="label">TOOLS &amp; PLATFORMS WE WORK IN</span>
+      <div class="chip-row">
+        <span class="chip">AWS</span>
+        <span class="chip">Azure</span>
+        <span class="chip">Google Cloud</span>
+        <span class="chip">Kubernetes</span>
+        <span class="chip">Docker</span>
+        <span class="chip">React</span>
+        <span class="chip">Node.js</span>
+        <span class="chip">Python</span>
+        <span class="chip">Terraform</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2 class="section-title">Three services. One accountable team.</h2>
+      <p class="section-lede">Most firms hand you off between sales, design, dev, and ops. We keep the same engineers across the whole lifecycle — so nothing gets lost in translation.</p>
+
+      <div class="card-grid">
+        <div class="card spotlight crosshair">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          </div>
+          <h3>Software Design</h3>
+          <p>Product strategy, UX/UI, and system architecture — the blueprint that keeps a build from unraveling six months in.</p>
+          <ul class="bullets">
+            <li>Discovery &amp; product strategy</li>
+            <li>UX / UI design</li>
+            <li>System &amp; API architecture</li>
+          </ul>
+          <a href="services.html#software-design" class="more">Learn more →</a>
+        </div>
+        <div class="card spotlight crosshair">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 16l-4-4 4-4M16 8l4 4-4 4M14 4l-4 16"/></svg>
+          </div>
+          <h3>Software Development</h3>
+          <p>Custom web and mobile applications, built by engineers who own the codebase they hand you — not a template.</p>
+          <ul class="bullets">
+            <li>Web &amp; mobile application development</li>
+            <li>API &amp; third-party integrations</li>
+            <li>Legacy system modernization</li>
+          </ul>
+          <a href="services.html#software-development" class="more">Learn more →</a>
+        </div>
+        <div class="card spotlight crosshair">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+          </div>
+          <h3>Cloud Services</h3>
+          <p>Migration, architecture, and day-two operations on AWS, Azure, or GCP — so your infrastructure scales without surprises.</p>
+          <ul class="bullets">
+            <li>Cloud migration &amp; architecture</li>
+            <li>DevOps &amp; CI/CD pipelines</li>
+            <li>Managed monitoring &amp; support</li>
+          </ul>
+          <a href="services.html#cloud-services" class="more">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container split reveal">
+      <div>
+        <span class="eyebrow">Why TechMinds</span>
+        <h2 class="section-title">Built for businesses that got burned by the last agency.</h2>
+        <div class="value-list">
+          <div class="value-item">
+            <div class="num">01</div>
+            <div><h4>Senior engineers, start to finish</h4><p>No handoff to a junior team after the pitch. The people who scope the work build it.</p></div>
+          </div>
+          <div class="value-item">
+            <div class="num">02</div>
+            <div><h4>Fixed-scope delivery</h4><p>Clear milestones and pricing agreed up front — not an open-ended hourly clock.</p></div>
+          </div>
+          <div class="value-item">
+            <div class="num">03</div>
+            <div><h4>Cloud-native by default</h4><p>Every build is designed to run efficiently on modern cloud infrastructure, not retrofitted later.</p></div>
+          </div>
+          <div class="value-item">
+            <div class="num">04</div>
+            <div><h4>Support after launch</h4><p>We stay on as the team that keeps it running, not just the team that shipped it once.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="visual-card">
+        <div class="visual-steps">
+          <div class="step"><span class="dot"></span><div><h5>Discover</h5><p>Understand the problem before touching a single line of code.</p></div></div>
+          <div class="step"><span class="dot"></span><div><h5>Design</h5><p>Architecture and UX decisions made deliberately, not by default.</p></div></div>
+          <div class="step"><span class="dot"></span><div><h5>Build</h5><p>Iterative delivery with working software at every milestone.</p></div></div>
+          <div class="step"><span class="dot"></span><div><h5>Run</h5><p>Cloud operations and support that outlast the initial build.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2 class="section-title">A process that doesn't surprise you later.</h2>
+      <div class="process-grid">
+        <div class="process-step spotlight"><div class="pnum">01</div><h4>Discovery call</h4><p>We learn your goals, constraints, and what "done" actually looks like.</p></div>
+        <div class="process-step spotlight"><div class="pnum">02</div><h4>Proposal &amp; scope</h4><p>Fixed-scope plan with milestones, timeline, and price — no surprises.</p></div>
+        <div class="process-step spotlight"><div class="pnum">03</div><h4>Design &amp; architecture</h4><p>UX and system design signed off before a single line of code ships.</p></div>
+        <div class="process-step spotlight"><div class="pnum">04</div><h4>Build &amp; iterate</h4><p>Working software delivered in milestones, with your feedback built in.</p></div>
+        <div class="process-step spotlight"><div class="pnum">05</div><h4>Launch &amp; support</h4><p>We deploy, monitor, and stay on as your ongoing cloud &amp; dev partner.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal">
+      <div class="cta-band">
+        <div>
+          <h3>Have a project in mind?</h3>
+          <p>Tell us what you're building — we'll scope it with you on a free discovery call.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
+        <p>IT consulting for businesses that need software and cloud infrastructure that actually works — designed, built, and run by one accountable team.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#software-design">Software Design</a></li>
+          <li><a href="services.html#software-development">Software Development</a></li>
+          <li><a href="services.html#cloud-services">Cloud Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <ul>
+          <li>techmindsconsulting@gmail.com</li>
+          <li>rajeshoruganti.tech</li>
+          <li>Sydney, Australia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 TechMinds. All rights reserved.</span>
+      <span>Software Design · Development · Cloud Services</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script type="module" src="js/hero-3d.js"></script>
+</body>
+</html>

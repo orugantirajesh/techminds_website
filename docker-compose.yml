@@ -1,0 +1,12 @@
+services:
+  techminds:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.techminds.rule=Host(`rajeshoruganti.tech`) || Host(`www.rajeshoruganti.tech`)"
+      - "traefik.http.routers.techminds.entrypoints=websecure"
+      - "traefik.http.routers.techminds.tls.certresolver=letsencrypt"
+      - "traefik.http.services.techminds.loadbalancer.server.port=80"
