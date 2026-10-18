@@ -1,103 +1,85 @@
-// TechMinds — shared site behavior: mobile nav, scroll reveal, header shadow,
-// active nav highlighting, contact form (client-side only — see contact.html).
+// TechMinds — shared behaviour: mobile menu, current-page nav, scroll reveal, contact form.
+document.documentElement.classList.add("js");
+
+const CONTACT_EMAIL = "techmindsconsulting@gmail.com";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Mobile nav toggle
+  // Mobile menu
   const toggle = document.querySelector(".nav-toggle");
-  const links = document.querySelector(".nav-links");
+  const links = document.getElementById("nav-links");
   if (toggle && links) {
-    toggle.addEventListener("click", () => links.classList.toggle("open"));
-    links.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => links.classList.remove("open"))
-    );
+    const setOpen = (open) => {
+      links.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    toggle.addEventListener("click", () => setOpen(!links.classList.contains("open")));
+    links.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && links.classList.contains("open")) { setOpen(false); toggle.focus(); }
+    });
   }
 
-  // Highlight the current page in the nav
+  // Mark the current page in the nav
   const here = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".nav-links a").forEach((a) => {
-    const target = a.getAttribute("href");
-    if (target === here || (here === "" && target === "index.html")) {
-      a.classList.add("active");
-    }
+    if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
   });
 
-  // Reveal-on-scroll
+  // Reveal on scroll
   const revealEls = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && revealEls.length) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add("in"); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
     revealEls.forEach((el) => io.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add("in"));
   }
 
-  // Spotlight cards — pointer-follow glow (vanilla port of 21st.dev feature-08)
-  document.querySelectorAll(".spotlight").forEach((el) => {
-    el.addEventListener("pointermove", (e) => {
-      const rect = el.getBoundingClientRect();
-      el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
-      el.style.setProperty("--my", `${e.clientY - rect.top}px`);
-    });
-  });
-
-  // Count-up stats (vanilla port of 21st.dev number-ticker-05)
-  const counters = document.querySelectorAll("[data-count]");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const runCount = (el) => {
-    const target = Number(el.dataset.count);
-    if (reduceMotion) { el.textContent = target; return; }
-    const duration = 1100;
-    const start = performance.now();
-    const tick = (now) => {
-      const t = Math.min((now - start) / duration, 1);
-      el.textContent = Math.round(target * (1 - Math.pow(1 - t, 3)));
-      if (t < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  };
-  if ("IntersectionObserver" in window && counters.length) {
-    const cio = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            runCount(entry.target);
-            cio.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    counters.forEach((el) => {
-      if (!reduceMotion) el.textContent = "0";
-      cio.observe(el);
-    });
-  } else {
-    counters.forEach((el) => (el.textContent = el.dataset.count));
-  }
-
-  // Contact form — client-side only. No backend is wired up yet; this just
-  // validates and shows a confirmation. Replace with a real submit handler
-  // (e.g. POST to your own API, or a form service) when you're ready.
+  // Contact form: validate, then open the visitor's email app with the message filled in.
   const form = document.getElementById("contact-form");
   if (form) {
+    const status = document.getElementById("form-status");
+    const showError = (field, message) => {
+      const err = document.getElementById(`${field.id}-error`);
+      field.setAttribute("aria-invalid", message ? "true" : "false");
+      if (err) err.textContent = message || "";
+    };
+    const check = (field) => {
+      if (field.validity.valueMissing) return "Please fill this in.";
+      if (field.validity.typeMismatch) return "Please enter a valid email address.";
+      return "";
+    };
+    form.querySelectorAll("input, select, textarea").forEach((field) => {
+      field.addEventListener("blur", () => { if (field.required || field.value) showError(field, check(field)); });
+    });
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      document.getElementById("form-success").classList.add("show");
-      form.reset();
-      document.getElementById("form-success").scrollIntoView({ behavior: "smooth", block: "center" });
+      let firstInvalid = null;
+      form.querySelectorAll("input, select, textarea").forEach((field) => {
+        const msg = check(field);
+        showError(field, msg);
+        if (msg && !firstInvalid) firstInvalid = field;
+      });
+      if (firstInvalid) { firstInvalid.focus(); return; }
+
+      const v = (id) => document.getElementById(id).value.trim();
+      const service = form.service.options[form.service.selectedIndex].text;
+      const subject = `Project enquiry — ${service}${v("company") ? " — " + v("company") : ""}`;
+      const details = [`Name: ${v("name")}`, `Email: ${v("email")}`];
+      if (v("company")) details.push(`Company: ${v("company")}`);
+      if (v("phone")) details.push(`Phone: ${v("phone")}`);
+      details.push(`Service: ${service}`);
+      const body = `${details.join("\n")}\n\n${v("message")}`;
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      status.textContent = `Your email app should now open with your message ready — just press Send. ` +
+        `If nothing opened, email us directly at ${CONTACT_EMAIL}.`;
+      status.classList.add("show");
+      status.focus();
     });
   }
 });

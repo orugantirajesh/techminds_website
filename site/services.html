@@ -1,145 +1,164 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services — TechMinds</title>
-  <meta name="description" content="Software design, software development, and cloud services from TechMinds — an IT consulting firm." />
+  <title>Services — TechMinds Consulting</title>
+  <meta name="description" content="Software design, software development and cloud services from TechMinds Consulting, Sydney." />
+  <meta name="theme-color" content="#fbfbfd" />
+  <link rel="icon" href="assets/logo.png" />
+  <meta property="og:title" content="Services — TechMinds Consulting" />
+  <meta property="og:description" content="Software design, software development and cloud services from TechMinds Consulting, Sydney." />
+  <meta property="og:image" content="https://techmindsconsulting.com.au/assets/logo.png" />
+  <link rel="canonical" href="https://techmindsconsulting.com.au/services.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="header-row">
-      <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="TechMinds Consulting — home" width="109" height="30" /></a>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
-      <div class="nav-right">
-        <a href="contact.html" class="btn btn-ghost">Get a Quote</a>
-        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-      </div>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a consultation</a>
+      <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
     </div>
   </header>
 
-  <section class="page-header">
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow reveal">Services</span>
+        <h1 class="display reveal reveal-delay-1">Design. Build. Run.</h1>
+        <p class="lede reveal reveal-delay-2">Three disciplines, one accountable team. We design the product, build it, and run the cloud it lives on.</p>
+      </div>
+    </section>
+
+    <nav class="subnav" aria-label="Services on this page">
+      <ul>
+        <li><a href="#software-design">Software Design</a></li>
+        <li><a href="#software-development">Software Development</a></li>
+        <li><a href="#cloud-services">Cloud Services</a></li>
+        <li><a href="#get-started">Get started</a></li>
+      </ul>
+    </nav>
+
+    <section class="section service-section" id="software-design" aria-labelledby="sd">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">01 · Software Design</span>
+          <h2 class="headline" id="sd">The blueprint that keeps a build from unravelling.</h2>
+          <p class="lede">Before we write a line of code, we work out what actually needs to be built — and how to structure it so it’s still maintainable eighteen months from now.</p>
+          <div class="cta-row"><a href="contact.html" class="link-more">Talk to us about design</a></div>
+        </div>
+        <div class="capabilities two">
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><h3>Discovery &amp; product strategy</h3><p>Clarify goals, users and constraints before scoping a solution.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M9 9v11"/></svg><h3>UX / UI design</h3><p>Interfaces designed around how people actually work.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="5" rx="1.5"/><rect x="3" y="16" width="6" height="5" rx="1.5"/><rect x="15" y="16" width="6" height="5" rx="1.5"/><path d="M12 8v4M6 16v-2h12v2"/></svg><h3>System &amp; API architecture</h3><p>Structure that scales with your product, not against it.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><h3>Technical specifications</h3><p>Clear documentation your team — or ours — can build from.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section service-section bg-alt" id="software-development" aria-labelledby="sdev">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">02 · Software Development</span>
+          <h2 class="headline" id="sdev">Custom applications, built by the engineers who own them.</h2>
+          <p class="lede">Web apps, mobile apps, integrations and the unglamorous work of modernising legacy systems — delivered by the same senior team from first commit to launch.</p>
+          <div class="cta-row"><a href="contact.html" class="link-more">Talk to us about development</a></div>
+        </div>
+        <div class="capabilities">
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/><circle cx="6.5" cy="6.5" r=".6"/><circle cx="9" cy="6.5" r=".6"/></svg><h3>Web applications</h3><p>Full-stack builds on modern, maintainable frameworks.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M11 18h2"/></svg><h3>Mobile apps</h3><p>Native and cross-platform apps for iOS and Android.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></svg><h3>APIs &amp; integrations</h3><p>Connect your product to the tools your business already runs on.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.9-3M4 4v4h4M4 13a8 8 0 0 0 14.9 3M20 20v-4h-4"/></svg><h3>Legacy modernisation</h3><p>Replace brittle systems step by step — without a risky rewrite.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><h3>QA &amp; automated testing</h3><p>Test coverage built in, not bolted on after something breaks.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><h3>Ongoing delivery</h3><p>A team that keeps shipping after version one.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section service-section" id="cloud-services" aria-labelledby="sc">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">03 · Cloud Services</span>
+          <h2 class="headline" id="sc">Infrastructure that scales without surprise bills.</h2>
+          <p class="lede">Migration, architecture and the day-two operations most agencies skip — on AWS, Azure or Google Cloud, sized and secured for what you actually need.</p>
+          <div class="cta-row"><a href="contact.html" class="link-more">Talk to us about cloud</a></div>
+        </div>
+        <div class="capabilities">
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H8a5 5 0 1 1 .9-9.9A6 6 0 0 1 20 11a4 4 0 0 1-2.5 8z"/><path d="M12 17v-6M9.5 13.5L12 11l2.5 2.5"/></svg><h3>Cloud migration</h3><p>Move off legacy hosting without a weekend of downtime.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg><h3>Cloud architecture</h3><p>AWS, Azure or GCP infrastructure designed around your workload.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 7v10M18 10c0 4-6 3-12 7"/></svg><h3>DevOps &amp; CI/CD</h3><p>Automated pipelines, so deployments are routine — not risky.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18a9 9 0 1 1 16 0"/><path d="M12 14l4-5"/></svg><h3>Cost optimisation</h3><p>Right-sized infrastructure. We’re not paid to over-provision you.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg><h3>Monitoring &amp; support</h3><p>Someone on call when your infrastructure needs attention.</p></div>
+          <div class="cap reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><h3>Security baselines</h3><p>Sensible defaults for access control, backups and audit trails.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section on-dark closing" id="get-started" aria-labelledby="gs">
+      <div class="container reveal">
+        <h2 class="headline" id="gs">Not sure which you need?</h2>
+        <p class="lede">That’s what the discovery call is for. Tell us where you’re stuck and we’ll scope it together.</p>
+        <div class="cta-row">
+          <a href="contact.html" class="btn btn-primary">Book a free consultation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a> / Services</div>
-      <h1>What we do</h1>
-      <p>Three disciplines, one accountable team: we design the product, build it, and run the cloud infrastructure it lives on.</p>
-    </div>
-  </section>
-
-  <section style="padding-bottom: 0;">
-    <div class="container">
-
-      <div class="service-block" id="software-design">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="TechMinds Consulting" width="102" height="28" loading="lazy" />
+          <p>Software design, development and cloud services for growing businesses — designed, built and run by one accountable team.</p>
+        </div>
         <div>
-          <span class="tag">01 / SOFTWARE DESIGN</span>
-          <h2>The blueprint that keeps a build from unraveling.</h2>
-          <p>Before we write a line of code, we figure out what actually needs to be built — and how it should be structured so it's still maintainable eighteen months from now.</p>
-          <a href="contact.html" class="btn btn-outline" style="margin-top:22px;">Talk to us about design →</a>
+          <h2>Services</h2>
+          <ul>
+            <li><a href="services.html#software-design">Software Design</a></li>
+            <li><a href="services.html#software-development">Software Development</a></li>
+            <li><a href="services.html#cloud-services">Cloud Services</a></li>
+          </ul>
         </div>
-        <div class="service-detail-grid">
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Discovery &amp; product strategy</h5><p>Clarify goals, users, and constraints before scoping a solution.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>UX / UI design</h5><p>Interfaces designed around how people actually work.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>System &amp; API architecture</h5><p>Structure that scales with your product, not against it.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Technical specifications</h5><p>Clear documentation your team — or ours — can build from.</p></div></div>
-        </div>
-      </div>
-
-      <div class="service-block" id="software-development">
         <div>
-          <span class="tag">02 / SOFTWARE DEVELOPMENT</span>
-          <h2>Custom applications, built by the engineers who own them.</h2>
-          <p>Web apps, mobile apps, integrations, and the unglamorous work of modernizing a legacy system — delivered by the same senior team from first commit to launch.</p>
-          <a href="contact.html" class="btn btn-outline" style="margin-top:22px;">Talk to us about development →</a>
+          <h2>Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        <div class="service-detail-grid">
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Web application development</h5><p>Full-stack builds on modern, maintainable frameworks.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Mobile app development</h5><p>Native and cross-platform apps for iOS and Android.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>API &amp; third-party integrations</h5><p>Connect your product to the tools your business already runs on.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Legacy modernization</h5><p>Incrementally replace brittle systems without a risky rewrite.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>QA &amp; automated testing</h5><p>Test coverage built in, not bolted on after something breaks.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Ongoing feature delivery</h5><p>A team that keeps shipping after v1, not just at launch.</p></div></div>
-        </div>
-      </div>
-
-      <div class="service-block" id="cloud-services">
         <div>
-          <span class="tag">03 / CLOUD SERVICES</span>
-          <h2>Infrastructure that scales without surprise bills.</h2>
-          <p>Migration, architecture, and the day-two operations work most agencies skip — on AWS, Azure, or Google Cloud, sized and secured for what you actually need.</p>
-          <a href="contact.html" class="btn btn-outline" style="margin-top:22px;">Talk to us about cloud →</a>
-        </div>
-        <div class="service-detail-grid">
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Cloud migration</h5><p>Move off legacy hosting without a weekend of downtime.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Cloud architecture</h5><p>AWS, Azure, or GCP infrastructure designed around your workload.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>DevOps &amp; CI/CD</h5><p>Automated pipelines so deployments are routine, not risky.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Cost optimization</h5><p>Right-sized infrastructure — we're not paid to over-provision you.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Managed monitoring &amp; support</h5><p>Someone on call when infrastructure needs attention.</p></div></div>
-          <div class="item spotlight"><span class="mk">✓</span><div><h5>Security &amp; compliance baselines</h5><p>Sensible defaults for access control, backups, and audit trails.</p></div></div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="mailto:techmindsconsulting@gmail.com">techmindsconsulting@gmail.com</a></li>
+            <li>Sydney, Australia</li>
+          </ul>
         </div>
       </div>
-
-    </div>
-  </section>
-
-  <section>
-    <div class="container reveal">
-      <div class="cta-band">
-        <div>
-          <h3>Not sure which service you need?</h3>
-          <p>That's the discovery call's job — tell us where you're stuck and we'll scope it together.</p>
-        </div>
-        <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+      <div class="footer-bottom">
+        <span>Copyright © 2026 TechMinds Consulting Pty Ltd. All rights reserved.</span>
+        <span>techmindsconsulting.com.au</span>
       </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
-        <p>IT consulting for businesses that need software and cloud infrastructure that actually works — designed, built, and run by one accountable team.</p>
-      </div>
-      <div>
-        <h5>Company</h5>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Services</h5>
-        <ul>
-          <li><a href="services.html#software-design">Software Design</a></li>
-          <li><a href="services.html#software-development">Software Development</a></li>
-          <li><a href="services.html#cloud-services">Cloud Services</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Get in touch</h5>
-        <ul>
-          <li>techmindsconsulting@gmail.com</li>
-          <li>rajeshoruganti.tech</li>
-          <li>Sydney, Australia</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© 2026 TechMinds. All rights reserved.</span>
-      <span>Software Design · Development · Cloud Services</span>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>

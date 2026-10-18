@@ -1,144 +1,157 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — TechMinds</title>
-  <meta name="description" content="Book a consultation with TechMinds for software design, development, or cloud services." />
+  <title>Contact — TechMinds Consulting</title>
+  <meta name="description" content="Book a free consultation with TechMinds Consulting for software design, development or cloud services." />
+  <meta name="theme-color" content="#fbfbfd" />
+  <link rel="icon" href="assets/logo.png" />
+  <meta property="og:title" content="Contact — TechMinds Consulting" />
+  <meta property="og:description" content="Book a free consultation with TechMinds Consulting for software design, development or cloud services." />
+  <meta property="og:image" content="https://techmindsconsulting.com.au/assets/logo.png" />
+  <link rel="canonical" href="https://techmindsconsulting.com.au/contact.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="header-row">
-      <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="TechMinds Consulting — home" width="109" height="30" /></a>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
-      <div class="nav-right">
-        <a href="contact.html" class="btn btn-ghost">Get a Quote</a>
-        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-      </div>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a consultation</a>
+      <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
     </div>
   </header>
 
-  <section class="page-header">
-    <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
-      <h1>Let's talk about your project</h1>
-      <p>Tell us what you're building. We'll follow up to schedule a free discovery call.</p>
-    </div>
-  </section>
+  <main id="main">
 
-  <section>
-    <div class="container contact-grid">
-
-      <div class="form-card reveal">
-        <div id="form-success">✓ Thanks — your message has been received. We'll be in touch shortly.</div>
-        <form id="contact-form" novalidate>
-          <div class="form-row">
-            <div class="field">
-              <label for="name">Full name *</label>
-              <input id="name" name="name" type="text" required placeholder="Jane Smith" />
-            </div>
-            <div class="field">
-              <label for="email">Work email *</label>
-              <input id="email" name="email" type="email" required placeholder="jane@company.com" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="field">
-              <label for="company">Company</label>
-              <input id="company" name="company" type="text" placeholder="Company name" />
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" placeholder="Optional" />
-            </div>
-          </div>
-          <div class="field">
-            <label for="service">What do you need help with? *</label>
-            <select id="service" name="service" required>
-              <option value="" disabled selected>Select a service</option>
-              <option value="software-design">Software Design</option>
-              <option value="software-development">Software Development</option>
-              <option value="cloud-services">Cloud Services</option>
-              <option value="not-sure">Not sure yet</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="message">Project details *</label>
-            <textarea id="message" name="message" required placeholder="Tell us a bit about what you're trying to build or fix."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-          <p class="form-note">This form doesn't send anywhere yet — it's a placeholder UI. Wire it to a backend endpoint or form service (e.g. your own API, Formspree, or a mail service) before going live.</p>
-        </form>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow reveal">Contact</span>
+        <h1 class="display reveal reveal-delay-1">Let’s talk.</h1>
+        <p class="lede reveal reveal-delay-2">Tell us what you’re building. We’ll reply within one business day to set up a free discovery call.</p>
       </div>
+    </section>
 
-      <div class="reveal">
-        <div class="info-card">
-          <h4>Contact details</h4>
-          <div class="info-row"><span class="k">Email</span><span class="v">techmindsconsulting@gmail.com</span></div>
-          <div class="info-row"><span class="k">Website</span><span class="v">rajeshoruganti.tech</span></div>
-          <div class="info-row"><span class="k">Phone</span><span class="v">+61 413 319 949</span></div>
-          <div class="info-row"><span class="k">Location</span><span class="v">Sydney, Australia</span></div>
+    <section class="section bg-alt" aria-label="Contact form and details">
+      <div class="container contact-grid">
+        <div class="form-card reveal">
+          <div id="form-status" class="form-status" role="status" tabindex="-1"></div>
+          <form id="contact-form" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Full name <span class="req">(required)</span></label>
+                <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" />
+                <span class="error" id="name-error"></span>
+              </div>
+              <div class="field">
+                <label for="email">Work email <span class="req">(required)</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" />
+                <span class="error" id="email-error"></span>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" autocomplete="organization" />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="service">What do you need help with? <span class="req">(required)</span></label>
+              <select id="service" name="service" required aria-describedby="service-error">
+                <option value="" disabled selected>Choose a service</option>
+                <option value="software-design">Software Design</option>
+                <option value="software-development">Software Development</option>
+                <option value="cloud-services">Cloud Services</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+              <span class="error" id="service-error"></span>
+            </div>
+            <div class="field">
+              <label for="message">Project details <span class="req">(required)</span></label>
+              <textarea id="message" name="message" required aria-describedby="message-error message-hint"></textarea>
+              <span class="muted" id="message-hint" style="font-size: 13px;">A few lines on what you’re trying to build or fix is plenty.</span>
+              <span class="error" id="message-error"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send message</button>
+            <p class="form-note">Sending opens your email app with your message ready to go.</p>
+          </form>
         </div>
-        <div class="card spotlight">
-          <h3>What happens next?</h3>
-          <ul class="bullets">
-            <li>We reply within one business day</li>
-            <li>A short discovery call to understand scope</li>
-            <li>A fixed-scope proposal with timeline &amp; price</li>
+
+        <aside class="info-card reveal reveal-delay-1" aria-labelledby="details">
+          <h2 id="details">Contact details</h2>
+          <ul class="info-list">
+            <li><span class="k">Email</span><a class="v" href="mailto:techmindsconsulting@gmail.com">techmindsconsulting@gmail.com</a></li>
+            <li><span class="k">Phone</span><a class="v" href="tel:+61413319949">+61 413 319 949</a></li>
+            <li><span class="k">Website</span><span class="v">techmindsconsulting.com.au</span></li>
+            <li><span class="k">Location</span><span class="v">Sydney, Australia</span></li>
+          </ul>
+          <h2 style="margin-top: 40px;">What happens next</h2>
+          <ol class="next-steps">
+            <li>We reply within one business day.</li>
+            <li>A short discovery call to understand scope.</li>
+            <li>A fixed-scope proposal with timeline and price.</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="TechMinds Consulting" width="102" height="28" loading="lazy" />
+          <p>Software design, development and cloud services for growing businesses — designed, built and run by one accountable team.</p>
+        </div>
+        <div>
+          <h2>Services</h2>
+          <ul>
+            <li><a href="services.html#software-design">Software Design</a></li>
+            <li><a href="services.html#software-development">Software Development</a></li>
+            <li><a href="services.html#cloud-services">Cloud Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="mailto:techmindsconsulting@gmail.com">techmindsconsulting@gmail.com</a></li>
+            <li>Sydney, Australia</li>
           </ul>
         </div>
       </div>
-
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
-        <p>IT consulting for businesses that need software and cloud infrastructure that actually works — designed, built, and run by one accountable team.</p>
+      <div class="footer-bottom">
+        <span>Copyright © 2026 TechMinds Consulting Pty Ltd. All rights reserved.</span>
+        <span>techmindsconsulting.com.au</span>
       </div>
-      <div>
-        <h5>Company</h5>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Services</h5>
-        <ul>
-          <li><a href="services.html#software-design">Software Design</a></li>
-          <li><a href="services.html#software-development">Software Development</a></li>
-          <li><a href="services.html#cloud-services">Cloud Services</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Get in touch</h5>
-        <ul>
-          <li>techmindsconsulting@gmail.com</li>
-          <li>rajeshoruganti.tech</li>
-          <li>Sydney, Australia</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© 2026 TechMinds. All rights reserved.</span>
-      <span>Software Design · Development · Cloud Services</span>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>

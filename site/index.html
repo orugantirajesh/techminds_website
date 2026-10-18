@@ -1,225 +1,283 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TechMinds — Software Design, Development &amp; Cloud Services</title>
-  <meta name="description" content="TechMinds is an IT consulting firm specializing in software design, custom development, and cloud services for growing businesses." />
+  <title>TechMinds Consulting — Software Design, Development &amp; Cloud</title>
+  <meta name="description" content="TechMinds Consulting is a Sydney IT consultancy. Senior engineers design, build and run custom software and cloud infrastructure for growing businesses." />
+  <meta name="theme-color" content="#fbfbfd" />
+  <link rel="icon" href="assets/logo.png" />
+  <meta property="og:title" content="TechMinds Consulting" />
+  <meta property="og:description" content="Software and cloud, built properly. Designed, built and run by one senior team." />
+  <meta property="og:image" content="https://techmindsconsulting.com.au/assets/logo.png" />
+  <link rel="canonical" href="https://techmindsconsulting.com.au/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <script type="importmap">
-    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js" } }
-  </script>
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="header-row">
-      <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="TechMinds Consulting — home" width="109" height="30" /></a>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
-      <div class="nav-right">
-        <a href="contact.html" class="btn btn-ghost">Get a Quote</a>
-        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-      </div>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a consultation</a>
+      <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">IT Consulting, Done Properly</span>
-        <h1>Software and cloud<br />built by <span class="accent">senior engineers</span>, not a sales pipeline.</h1>
-        <p class="lede">TechMinds designs, builds, and ships custom software — and runs the cloud infrastructure underneath it — for businesses that need technology to actually work.</p>
-        <div class="hero-cta">
-          <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
-          <a href="services.html" class="btn btn-ghost">Explore Services →</a>
-        </div>
-        <div class="hero-stats">
-          <div><strong>Design → Build → Run</strong><span>End-to-end delivery</span></div>
-          <div><strong>AWS · Azure · GCP</strong><span>Cloud-native by default</span></div>
-          <div><strong>Fixed-scope</strong><span>No surprise invoices</span></div>
-        </div>
-      </div>
-      <div class="hero-visual" id="hero-visual">
-        <div class="hero-visual-fallback" aria-hidden="true"></div>
-        <canvas id="hero-3d-canvas" aria-hidden="true"></canvas>
-      </div>
-    </div>
-  </section>
+  <main id="main">
 
-  <div class="logo-strip">
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow reveal">TechMinds Consulting</span>
+        <h1 class="display reveal reveal-delay-1">Software and cloud.<br /><span class="gradient-text">Built properly.</span></h1>
+        <p class="lede reveal reveal-delay-2">Senior engineers who design, build and run your software and the cloud underneath it — one accountable team, from first call to long after launch.</p>
+        <div class="cta-row reveal reveal-delay-3">
+          <a href="contact.html" class="btn btn-primary">Book a free consultation</a>
+          <a href="services.html" class="link-more">Explore services</a>
+        </div>
+      </div>
+
+      <div class="hero-art window reveal reveal-delay-3" aria-hidden="true">
+        <div class="window-bar"><span></span><span></span><span></span></div>
+        <div class="window-body">
+<pre class="code"><span class="c">// how every engagement works</span>
+<span class="k">const</span> product = <span class="k">await</span> <span class="f">design</span>({
+  users: <span class="s">"your customers"</span>,
+  goal:  <span class="s">"what done looks like"</span>,
+})
+
+<span class="k">await</span> <span class="f">build</span>(product, { tests: <span class="n">true</span> })
+<span class="k">await</span> <span class="f">run</span>(product, {
+  cloud: [<span class="s">"AWS"</span>, <span class="s">"Azure"</span>, <span class="s">"GCP"</span>],
+  support: <span class="s">"after launch"</span>,
+})</pre>
+          <svg class="diagram" viewBox="0 0 360 300" fill="none">
+            <g stroke="#3fc2b3" stroke-opacity=".55" stroke-width="1.5">
+              <path d="M180 70v40M180 150v40M180 190L90 240M180 190l90 50M180 190v50"/>
+            </g>
+            <g font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+              <rect x="120" y="30" width="120" height="40" rx="12" fill="#1d2a38" stroke="#3fc2b3" stroke-opacity=".6"/>
+              <text x="180" y="55" fill="#e6f4f2">Your users</text>
+              <rect x="120" y="110" width="120" height="40" rx="12" fill="#1d2a38" stroke="#3fc2b3" stroke-opacity=".6"/>
+              <text x="180" y="135" fill="#e6f4f2">App &amp; API</text>
+              <circle cx="180" cy="190" r="6" fill="#3fc2b3"/>
+              <rect x="50" y="240" width="80" height="40" rx="12" fill="#0f3a36"/>
+              <text x="90" y="265" fill="#9ff0e5">AWS</text>
+              <rect x="140" y="240" width="80" height="40" rx="12" fill="#0f3a36"/>
+              <text x="180" y="265" fill="#9ff0e5">Azure</text>
+              <rect x="230" y="240" width="80" height="40" rx="12" fill="#0f3a36"/>
+              <text x="270" y="265" fill="#9ff0e5">GCP</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service tiles -->
+    <section class="tile bg-alt" id="design" aria-labelledby="t-design">
+      <div class="container">
+        <span class="eyebrow reveal">Software Design</span>
+        <h2 class="headline reveal" id="t-design">Get the blueprint right.</h2>
+        <p class="lede reveal">Product strategy, UX and system architecture — decided deliberately, before a line of code is written.</p>
+        <div class="cta-row reveal">
+          <a href="services.html#software-design" class="link-more">Learn more</a>
+          <a href="contact.html" class="link-more">Talk to us</a>
+        </div>
+      </div>
+      <div class="tile-art reveal" aria-hidden="true">
+        <svg viewBox="0 0 880 360" fill="none">
+          <rect x="140" y="20" width="600" height="360" rx="24" fill="#fff" stroke="#d2d2d7"/>
+          <rect x="140" y="20" width="600" height="44" rx="24" fill="#fbfbfd"/>
+          <circle cx="172" cy="42" r="6" fill="#d2d2d7"/><circle cx="192" cy="42" r="6" fill="#d2d2d7"/><circle cx="212" cy="42" r="6" fill="#d2d2d7"/>
+          <rect x="180" y="96" width="220" height="22" rx="6" fill="#202a3a"/>
+          <rect x="180" y="132" width="320" height="12" rx="6" fill="#e8e8ed"/>
+          <rect x="180" y="152" width="270" height="12" rx="6" fill="#e8e8ed"/>
+          <rect x="180" y="184" width="120" height="36" rx="18" fill="#00665e"/>
+          <rect x="180" y="250" width="160" height="110" rx="14" fill="#f5f5f7" stroke="#00665e" stroke-dasharray="6 6"/>
+          <rect x="360" y="250" width="160" height="110" rx="14" fill="#f5f5f7"/>
+          <rect x="540" y="250" width="160" height="110" rx="14" fill="#f5f5f7"/>
+          <rect x="560" y="96" width="140" height="124" rx="16" fill="#e6f2f1"/>
+          <path d="M590 190l26-34 22 24 16-14 16 24" stroke="#00665e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="600" cy="128" r="10" fill="#00665e" opacity=".5"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tile on-dark" id="development" aria-labelledby="t-dev">
+      <div class="container">
+        <span class="eyebrow reveal">Software Development</span>
+        <h2 class="headline reveal" id="t-dev">Built by the people who own it.</h2>
+        <p class="lede reveal">Custom web and mobile apps, integrations and legacy modernisation — delivered by the same senior team from first commit to launch.</p>
+        <div class="cta-row reveal">
+          <a href="services.html#software-development" class="link-more">Learn more</a>
+          <a href="contact.html" class="link-more">Talk to us</a>
+        </div>
+      </div>
+      <div class="tile-art reveal" aria-hidden="true">
+        <svg viewBox="0 0 880 360" fill="none" font-family="SF Mono, Menlo, monospace" font-size="17">
+          <rect x="90" y="20" width="700" height="360" rx="24" fill="#1d1d1f"/>
+          <text x="130" y="80" fill="#6c7986">// ships with tests, CI/CD and docs</text>
+          <text x="130" y="118"><tspan fill="#ff7ab2">export async function</tspan><tspan fill="#6bdfd2"> placeOrder</tspan><tspan fill="#c9d4e0">(cart) {</tspan></text>
+          <text x="160" y="156"><tspan fill="#ff7ab2">const</tspan><tspan fill="#c9d4e0"> total = </tspan><tspan fill="#6bdfd2">price</tspan><tspan fill="#c9d4e0">(cart.items)</tspan></text>
+          <text x="160" y="194"><tspan fill="#ff7ab2">await</tspan><tspan fill="#c9d4e0"> payments.</tspan><tspan fill="#6bdfd2">charge</tspan><tspan fill="#c9d4e0">(cart.customer, total)</tspan></text>
+          <text x="160" y="232"><tspan fill="#ff7ab2">return</tspan><tspan fill="#c9d4e0"> orders.</tspan><tspan fill="#6bdfd2">create</tspan><tspan fill="#c9d4e0">({ cart, total })</tspan></text>
+          <text x="130" y="270" fill="#c9d4e0">}</text>
+          <rect x="130" y="304" width="250" height="40" rx="20" fill="#0f3a36"/>
+          <text x="152" y="330" fill="#9ff0e5" font-family="Inter, sans-serif" font-size="15" font-weight="600">✓ 128 tests passed</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tile" id="cloud" aria-labelledby="t-cloud">
+      <div class="container">
+        <span class="eyebrow reveal">Cloud Services</span>
+        <h2 class="headline reveal" id="t-cloud">Scale without surprise bills.</h2>
+        <p class="lede reveal">Migration, architecture and day-two operations on AWS, Azure or Google Cloud — sized and secured for what you actually need.</p>
+        <div class="cta-row reveal">
+          <a href="services.html#cloud-services" class="link-more">Learn more</a>
+          <a href="contact.html" class="link-more">Talk to us</a>
+        </div>
+      </div>
+      <div class="tile-art padded reveal" aria-hidden="true">
+        <svg viewBox="0 0 880 340" fill="none" font-family="Inter, sans-serif" font-weight="600" text-anchor="middle">
+          <g fill="#f5f5f7">
+            <circle cx="380" cy="138" r="62"/><circle cx="470" cy="112" r="78"/><circle cx="560" cy="146" r="56"/>
+            <rect x="268" y="128" width="374" height="108" rx="54"/>
+          </g>
+          <text x="455" y="180" fill="#1d1d1f" font-size="22">Your platform</text>
+          <text x="455" y="208" fill="#6e6e73" font-size="15" font-weight="500">monitored · backed up · right-sized</text>
+          <g stroke="#00665e" stroke-width="2" stroke-dasharray="5 6"><path d="M300 236l-110 64M455 236v64M610 236l110 64"/></g>
+          <rect x="120" y="290" width="140" height="44" rx="22" fill="#e6f2f1"/><text x="190" y="318" fill="#00665e" font-size="16">AWS</text>
+          <rect x="385" y="290" width="140" height="44" rx="22" fill="#e6f2f1"/><text x="455" y="318" fill="#00665e" font-size="16">Azure</text>
+          <rect x="650" y="290" width="140" height="44" rx="22" fill="#e6f2f1"/><text x="720" y="318" fill="#00665e" font-size="16">Google Cloud</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Why TechMinds -->
+    <section class="section bg-alt" aria-labelledby="why">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why TechMinds</span>
+          <h2 class="headline" id="why">For businesses burned by the last agency.</h2>
+        </div>
+        <div class="grid grid-4">
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+            <h3>Senior, start to finish</h3>
+            <p>The people who scope your project are the people who build it. No hand-off to a junior team.</p>
+          </article>
+          <article class="card reveal reveal-delay-1">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+            <h3>Fixed-scope pricing</h3>
+            <p>Milestones and price agreed up front — not an open-ended hourly clock.</p>
+          </article>
+          <article class="card reveal reveal-delay-2">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H8a5 5 0 1 1 .9-9.9A6 6 0 0 1 20 11a4 4 0 0 1-2.5 8z"/></svg></div>
+            <h3>Cloud-native by default</h3>
+            <p>Every build is designed to run efficiently in the cloud — not retrofitted later.</p>
+          </article>
+          <article class="card reveal reveal-delay-3">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Support after launch</h3>
+            <p>We stay on as the team that keeps it running — not just the team that shipped it once.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" aria-labelledby="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How we work</span>
+          <h2 class="headline" id="process">No surprises. Just progress.</h2>
+        </div>
+        <ol class="steps reveal">
+          <li><span class="num">01</span><h3>Discovery call</h3><p>Your goals, constraints, and what “done” really looks like.</p></li>
+          <li><span class="num">02</span><h3>Proposal</h3><p>Fixed scope, milestones, timeline and price.</p></li>
+          <li><span class="num">03</span><h3>Design</h3><p>UX and architecture signed off before we build.</p></li>
+          <li><span class="num">04</span><h3>Build</h3><p>Working software at every milestone, with your feedback built in.</p></li>
+          <li><span class="num">05</span><h3>Launch &amp; run</h3><p>We deploy, monitor and stay on as your partner.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Platforms -->
+    <section class="section-tight bg-alt center" aria-labelledby="platforms">
+      <div class="container reveal">
+        <h2 class="title" id="platforms">The platforms we build on.</h2>
+        <ul class="platforms">
+          <li>AWS</li><li>Azure</li><li>Google Cloud</li><li>Kubernetes</li><li>Docker</li>
+          <li>Terraform</li><li>React</li><li>Node.js</li><li>Python</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="section on-dark closing" aria-labelledby="cta">
+      <div class="container reveal">
+        <h2 class="headline" id="cta">Have a project in mind?</h2>
+        <p class="lede">Tell us what you’re building. We’ll scope it with you on a free discovery call.</p>
+        <div class="cta-row">
+          <a href="contact.html" class="btn btn-primary">Book a free consultation</a>
+          <a href="mailto:techmindsconsulting@gmail.com" class="link-more">Email us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <span class="label">TOOLS &amp; PLATFORMS WE WORK IN</span>
-      <div class="chip-row">
-        <span class="chip">AWS</span>
-        <span class="chip">Azure</span>
-        <span class="chip">Google Cloud</span>
-        <span class="chip">Kubernetes</span>
-        <span class="chip">Docker</span>
-        <span class="chip">React</span>
-        <span class="chip">Node.js</span>
-        <span class="chip">Python</span>
-        <span class="chip">Terraform</span>
-      </div>
-    </div>
-  </div>
-
-  <section>
-    <div class="container reveal">
-      <span class="eyebrow">What We Do</span>
-      <h2 class="section-title">Three services. One accountable team.</h2>
-      <p class="section-lede">Most firms hand you off between sales, design, dev, and ops. We keep the same engineers across the whole lifecycle — so nothing gets lost in translation.</p>
-
-      <div class="card-grid">
-        <div class="card spotlight crosshair">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
-          </div>
-          <h3>Software Design</h3>
-          <p>Product strategy, UX/UI, and system architecture — the blueprint that keeps a build from unraveling six months in.</p>
-          <ul class="bullets">
-            <li>Discovery &amp; product strategy</li>
-            <li>UX / UI design</li>
-            <li>System &amp; API architecture</li>
-          </ul>
-          <a href="services.html#software-design" class="more">Learn more →</a>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="TechMinds Consulting" width="102" height="28" loading="lazy" />
+          <p>Software design, development and cloud services for growing businesses — designed, built and run by one accountable team.</p>
         </div>
-        <div class="card spotlight crosshair">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 16l-4-4 4-4M16 8l4 4-4 4M14 4l-4 16"/></svg>
-          </div>
-          <h3>Software Development</h3>
-          <p>Custom web and mobile applications, built by engineers who own the codebase they hand you — not a template.</p>
-          <ul class="bullets">
-            <li>Web &amp; mobile application development</li>
-            <li>API &amp; third-party integrations</li>
-            <li>Legacy system modernization</li>
-          </ul>
-          <a href="services.html#software-development" class="more">Learn more →</a>
-        </div>
-        <div class="card spotlight crosshair">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
-          </div>
-          <h3>Cloud Services</h3>
-          <p>Migration, architecture, and day-two operations on AWS, Azure, or GCP — so your infrastructure scales without surprises.</p>
-          <ul class="bullets">
-            <li>Cloud migration &amp; architecture</li>
-            <li>DevOps &amp; CI/CD pipelines</li>
-            <li>Managed monitoring &amp; support</li>
-          </ul>
-          <a href="services.html#cloud-services" class="more">Learn more →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container split reveal">
-      <div>
-        <span class="eyebrow">Why TechMinds</span>
-        <h2 class="section-title">Built for businesses that got burned by the last agency.</h2>
-        <div class="value-list">
-          <div class="value-item">
-            <div class="num">01</div>
-            <div><h4>Senior engineers, start to finish</h4><p>No handoff to a junior team after the pitch. The people who scope the work build it.</p></div>
-          </div>
-          <div class="value-item">
-            <div class="num">02</div>
-            <div><h4>Fixed-scope delivery</h4><p>Clear milestones and pricing agreed up front — not an open-ended hourly clock.</p></div>
-          </div>
-          <div class="value-item">
-            <div class="num">03</div>
-            <div><h4>Cloud-native by default</h4><p>Every build is designed to run efficiently on modern cloud infrastructure, not retrofitted later.</p></div>
-          </div>
-          <div class="value-item">
-            <div class="num">04</div>
-            <div><h4>Support after launch</h4><p>We stay on as the team that keeps it running, not just the team that shipped it once.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="visual-card">
-        <div class="visual-steps">
-          <div class="step"><span class="dot"></span><div><h5>Discover</h5><p>Understand the problem before touching a single line of code.</p></div></div>
-          <div class="step"><span class="dot"></span><div><h5>Design</h5><p>Architecture and UX decisions made deliberately, not by default.</p></div></div>
-          <div class="step"><span class="dot"></span><div><h5>Build</h5><p>Iterative delivery with working software at every milestone.</p></div></div>
-          <div class="step"><span class="dot"></span><div><h5>Run</h5><p>Cloud operations and support that outlast the initial build.</p></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container reveal">
-      <span class="eyebrow">How We Work</span>
-      <h2 class="section-title">A process that doesn't surprise you later.</h2>
-      <div class="process-grid">
-        <div class="process-step spotlight"><div class="pnum">01</div><h4>Discovery call</h4><p>We learn your goals, constraints, and what "done" actually looks like.</p></div>
-        <div class="process-step spotlight"><div class="pnum">02</div><h4>Proposal &amp; scope</h4><p>Fixed-scope plan with milestones, timeline, and price — no surprises.</p></div>
-        <div class="process-step spotlight"><div class="pnum">03</div><h4>Design &amp; architecture</h4><p>UX and system design signed off before a single line of code ships.</p></div>
-        <div class="process-step spotlight"><div class="pnum">04</div><h4>Build &amp; iterate</h4><p>Working software delivered in milestones, with your feedback built in.</p></div>
-        <div class="process-step spotlight"><div class="pnum">05</div><h4>Launch &amp; support</h4><p>We deploy, monitor, and stay on as your ongoing cloud &amp; dev partner.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container reveal">
-      <div class="cta-band">
         <div>
-          <h3>Have a project in mind?</h3>
-          <p>Tell us what you're building — we'll scope it with you on a free discovery call.</p>
+          <h2>Services</h2>
+          <ul>
+            <li><a href="services.html#software-design">Software Design</a></li>
+            <li><a href="services.html#software-development">Software Development</a></li>
+            <li><a href="services.html#cloud-services">Cloud Services</a></li>
+          </ul>
         </div>
-        <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+        <div>
+          <h2>Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="mailto:techmindsconsulting@gmail.com">techmindsconsulting@gmail.com</a></li>
+            <li>Sydney, Australia</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
-        <p>IT consulting for businesses that need software and cloud infrastructure that actually works — designed, built, and run by one accountable team.</p>
+      <div class="footer-bottom">
+        <span>Copyright © 2026 TechMinds Consulting Pty Ltd. All rights reserved.</span>
+        <span>techmindsconsulting.com.au</span>
       </div>
-      <div>
-        <h5>Company</h5>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Services</h5>
-        <ul>
-          <li><a href="services.html#software-design">Software Design</a></li>
-          <li><a href="services.html#software-development">Software Development</a></li>
-          <li><a href="services.html#cloud-services">Cloud Services</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Get in touch</h5>
-        <ul>
-          <li>techmindsconsulting@gmail.com</li>
-          <li>rajeshoruganti.tech</li>
-          <li>Sydney, Australia</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© 2026 TechMinds. All rights reserved.</span>
-      <span>Software Design · Development · Cloud Services</span>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
-  <script type="module" src="js/hero-3d.js"></script>
 </body>
 </html>

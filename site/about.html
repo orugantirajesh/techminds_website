@@ -1,177 +1,158 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — TechMinds</title>
-  <meta name="description" content="TechMinds is an IT consulting firm built around one accountable team for software design, development, and cloud services." />
+  <title>About — TechMinds Consulting</title>
+  <meta name="description" content="TechMinds Consulting is a Sydney IT consultancy built around one accountable, senior team." />
+  <meta name="theme-color" content="#fbfbfd" />
+  <link rel="icon" href="assets/logo.png" />
+  <meta property="og:title" content="About — TechMinds Consulting" />
+  <meta property="og:description" content="TechMinds Consulting is a Sydney IT consultancy built around one accountable, senior team." />
+  <meta property="og:image" content="https://techmindsconsulting.com.au/assets/logo.png" />
+  <link rel="canonical" href="https://techmindsconsulting.com.au/about.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="header-row">
-      <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="TechMinds Consulting — home" width="109" height="30" /></a>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
-      <div class="nav-right">
-        <a href="contact.html" class="btn btn-ghost">Get a Quote</a>
-        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-      </div>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a consultation</a>
+      <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
     </div>
   </header>
 
-  <section class="page-header">
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow reveal">About TechMinds</span>
+        <h1 class="display reveal reveal-delay-1">One team.<br />Start to finish.</h1>
+        <p class="lede reveal reveal-delay-2">We started TechMinds because too many businesses get handed between sales, design and development teams who’ve never spoken to each other.</p>
+      </div>
+    </section>
+
+    <section class="section bg-alt" aria-labelledby="story">
+      <div class="container split">
+        <div class="prose reveal">
+          <span class="eyebrow">Our story</span>
+          <h2 class="title" id="story" style="margin-bottom: 24px;">The people who scope it, build it.</h2>
+          <p>TechMinds is an IT consulting practice built around a simple idea: <strong>the people who scope your project should be the same people who design it, build it and keep it running.</strong></p>
+          <p>No hand-offs. No “that was the last team’s decision”. No agency churn. We work with businesses that need custom software and the cloud infrastructure underneath it — and want a partner who stays accountable after launch.</p>
+        </div>
+        <ul class="points reveal reveal-delay-1">
+          <li><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div><div><h3>Senior by default</h3><p>Every engagement is staffed by senior engineers and architects — not routed to whoever’s free.</p></div></li>
+          <li><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h3>Accountable end to end</h3><p>The team that designs your system is the team that ships and supports it.</p></div></li>
+          <li><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div><h3>Plain-language scoping</h3><p>Fixed-scope proposals you can actually read, with milestones that mean something.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section on-dark" aria-labelledby="glance">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">At a glance</span>
+          <h2 class="headline" id="glance">Small by design.<br />Accountable by default.</h2>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><div class="stat-num">3</div><h3>Disciplines</h3><p>Design, development and cloud, under one roof.</p></div>
+          <div class="stat"><div class="stat-num">3</div><h3>Major clouds</h3><p>AWS, Azure and Google Cloud.</p></div>
+          <div class="stat"><div class="stat-num">5</div><h3>Step process</h3><p>From discovery call to launch and beyond.</p></div>
+          <div class="stat"><div class="stat-num">1</div><h3>Accountable team</h3><p>The people who scope it, build and run it.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="leader">
+      <div class="container">
+        <div class="leader reveal">
+          <img src="assets/ceo-photo.jpg" alt="Rajesh Oruganti, Director and CEO of TechMinds Consulting" width="800" height="709" loading="lazy" />
+          <div>
+            <span class="eyebrow">Leadership</span>
+            <h2 class="headline" id="leader">Rajesh Oruganti</h2>
+            <p class="role">Director &amp; CEO</p>
+            <p class="lede">Leads TechMinds’ engagement strategy and technical direction — and stays hands-on with the engineering, rather than managing from a distance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-alt" aria-labelledby="values">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What we value</span>
+          <h2 class="headline" id="values">The principles behind every engagement.</h2>
+        </div>
+        <div class="grid grid-4">
+          <article class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Craft</h3><p>We build systems we’d be comfortable maintaining ourselves — because often, we are.</p></article>
+          <article class="card reveal reveal-delay-1"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Transparency</h3><p>Fixed scope, clear timelines, and no invoices that need explaining.</p></article>
+          <article class="card reveal reveal-delay-2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><h3>Follow-through</h3><p>We stay engaged after launch: monitoring, support and the next iteration.</p></article>
+          <article class="card reveal reveal-delay-3"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.4-.4-2.6z"/></svg></div><h3>Pragmatism</h3><p>The right tool for the job — not whatever’s trendiest or easiest to bill.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section on-dark closing" aria-labelledby="work">
+      <div class="container reveal">
+        <h2 class="headline" id="work">Want to work with a team like this?</h2>
+        <p class="lede">Start with a free discovery call — no obligation, no sales script.</p>
+        <div class="cta-row"><a href="contact.html" class="btn btn-primary">Book a free consultation</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a> / About</div>
-      <h1>Why TechMinds exists</h1>
-      <p>We started TechMinds because too many businesses get handed off between sales, design, and dev teams who've never spoken to each other.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="container split reveal">
-      <div>
-        <span class="eyebrow">Our Story</span>
-        <h2 class="section-title">One team, start to finish.</h2>
-        <p class="section-lede">
-          TechMinds is an IT consulting practice built around a simple idea: the people who scope your project
-          should be the same people who design it, build it, and keep it running. No handoffs, no "that was the
-          last team's decision," no agency churn.
-        </p>
-        <p class="section-lede">
-          We work with businesses that need custom software and the cloud infrastructure underneath it — and
-          want a partner who stays accountable after launch, not just through the invoice.
-        </p>
-      </div>
-      <div class="visual-card">
-        <div class="visual-steps">
-          <div class="step"><span class="dot"></span><div><h5>Senior by default</h5><p>Every engagement is staffed by senior engineers and architects — not routed to whoever's free.</p></div></div>
-          <div class="step"><span class="dot"></span><div><h5>Accountable end-to-end</h5><p>The team that designs your system is the team that ships and supports it.</p></div></div>
-          <div class="step"><span class="dot"></span><div><h5>Plain-language scoping</h5><p>Fixed-scope proposals you can actually read, with milestones that mean something.</p></div></div>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="TechMinds Consulting" width="102" height="28" loading="lazy" />
+          <p>Software design, development and cloud services for growing businesses — designed, built and run by one accountable team.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats-band on-dark">
-    <div class="container reveal">
-      <div class="stats-head">
         <div>
-          <span class="eyebrow">At a Glance</span>
-          <h2 class="section-title">Small by design. Accountable by default.</h2>
+          <h2>Services</h2>
+          <ul>
+            <li><a href="services.html#software-design">Software Design</a></li>
+            <li><a href="services.html#software-development">Software Development</a></li>
+            <li><a href="services.html#cloud-services">Cloud Services</a></li>
+          </ul>
         </div>
-        <span class="live-pill"><span class="live-dot" aria-hidden="true"></span>Booking discovery calls</span>
-      </div>
-      <div class="stats-grid">
-        <div class="stat"><div class="stat-num" data-count="3">3</div><h4>Core disciplines</h4><p>Design, development, and cloud — under one roof.</p></div>
-        <div class="stat"><div class="stat-num" data-count="3">3</div><h4>Major clouds</h4><p>AWS, Azure, and Google Cloud, sized to your workload.</p></div>
-        <div class="stat"><div class="stat-num" data-count="5">5</div><h4>Step delivery process</h4><p>From discovery call to launch and ongoing support.</p></div>
-        <div class="stat"><div class="stat-num" data-count="1">1</div><h4>Accountable team</h4><p>The people who scope it build it, ship it, and run it.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container reveal">
-      <span class="eyebrow">Leadership</span>
-      <h2 class="section-title">Led by someone who still writes code.</h2>
-      <div class="leader-card">
-        <img src="assets/ceo-photo.jpg" alt="Rajesh Oruganti, Director/CEO of TechMinds" />
         <div>
-          <h3>Rajesh Oruganti</h3>
-          <div class="role">Director / CEO</div>
-          <p class="bio">Leads TechMinds' engagement strategy and technical direction — staying hands-on with the engineering work rather than managing from a distance.</p>
+          <h2>Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container reveal">
-      <span class="eyebrow">What We Value</span>
-      <h2 class="section-title">The principles behind every engagement.</h2>
-      <div class="values-grid">
-        <div class="card spotlight crosshair">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
-          <h3>Craft</h3>
-          <p>We build systems we'd be comfortable maintaining ourselves — because often, we are.</p>
-        </div>
-        <div class="card spotlight crosshair">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg></div>
-          <h3>Transparency</h3>
-          <p>Fixed scope, clear timelines, and no invoices you need an explanation for.</p>
-        </div>
-        <div class="card spotlight crosshair">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h2a2 2 0 002-2V8l-5-5H6a2 2 0 00-2 2v4M9 15l2 2 4-4"/></svg></div>
-          <h3>Follow-through</h3>
-          <p>We stay engaged after launch — monitoring, support, and the next iteration.</p>
-        </div>
-        <div class="card spotlight crosshair">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4V4zM4 9h16M9 4v16"/></svg></div>
-          <h3>Pragmatism</h3>
-          <p>The right tool for the job — not whatever's trendiest or easiest for us to bill.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container reveal">
-      <div class="cta-band">
         <div>
-          <h3>Want to work with a team like this?</h3>
-          <p>Start with a free discovery call — no obligation, no sales script.</p>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="mailto:techmindsconsulting@gmail.com">techmindsconsulting@gmail.com</a></li>
+            <li>Sydney, Australia</li>
+          </ul>
         </div>
-        <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
       </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo"><span class="logo-badge"><img src="assets/logo.png" alt="TechMinds Consulting Pty Ltd" /></span></a>
-        <p>IT consulting for businesses that need software and cloud infrastructure that actually works — designed, built, and run by one accountable team.</p>
+      <div class="footer-bottom">
+        <span>Copyright © 2026 TechMinds Consulting Pty Ltd. All rights reserved.</span>
+        <span>techmindsconsulting.com.au</span>
       </div>
-      <div>
-        <h5>Company</h5>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Services</h5>
-        <ul>
-          <li><a href="services.html#software-design">Software Design</a></li>
-          <li><a href="services.html#software-development">Software Development</a></li>
-          <li><a href="services.html#cloud-services">Cloud Services</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Get in touch</h5>
-        <ul>
-          <li>techmindsconsulting@gmail.com</li>
-          <li>rajeshoruganti.tech</li>
-          <li>Sydney, Australia</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© 2026 TechMinds. All rights reserved.</span>
-      <span>Software Design · Development · Cloud Services</span>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
