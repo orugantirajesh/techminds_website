@@ -447,3 +447,16 @@ input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="
 .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .form-status.error { background: rgba(215, 0, 21, 0.08); color: #b00012; }
 .btn[disabled] { opacity: 0.6; cursor: progress; }
+
+/* Leadership profile (text only) */
+.profile { display: grid; grid-template-columns: 1fr 1.6fr; gap: var(--s-9); align-items: start; max-width: 1000px; margin-inline: auto; }
+@media (max-width: 860px) { .profile { grid-template-columns: 1fr; gap: var(--s-6); } }
+.profile .role { color: var(--brand); font-weight: 600; margin: var(--s-2) 0 var(--s-6); font-size: 19px; }
+.profile .highlight { border-top: 1px solid var(--border); padding-top: var(--s-5); }
+.profile .highlight .num { font-size: clamp(56px, 7vw, 80px); font-weight: 700; letter-spacing: -0.05em; line-height: 1; color: var(--brand); }
+.profile .highlight p { color: var(--text-2); margin-top: var(--s-2); }
+.profile .prose h3 { font-size: 21px; letter-spacing: -0.02em; margin: var(--s-7) 0 var(--s-4); color: var(--text); }
+.skills { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-4); }
+.skills li { display: grid; grid-template-columns: 24px 1fr; gap: var(--s-3); align-items: start; font-size: 17px; color: var(--text-2); line-height: 1.5; }
+.skills li strong { color: var(--text); font-weight: 600; }
+.skills svg { width: 22px; height: 22px; color: var(--brand); margin-top: 2px; }
