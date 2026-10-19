@@ -28,6 +28,7 @@ SERVICES = {
     "audit": "Free automation audit",
     "email-whatsapp": "Email alerts on WhatsApp",
     "invoices-xero": "Invoices, receipts & Xero",
+    "bank-statements": "Categorising bank statements",
     "whatsapp-assistant": "A WhatsApp assistant",
     "dashboard": "One dashboard for everything",
     "reports": "Reports & daily digests",

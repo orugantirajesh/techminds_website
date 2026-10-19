@@ -460,3 +460,29 @@ input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="
 .skills li { display: grid; grid-template-columns: 24px 1fr; gap: var(--s-3); align-items: start; font-size: 17px; color: var(--text-2); line-height: 1.5; }
 .skills li strong { color: var(--text); font-weight: 600; }
 .skills svg { width: 22px; height: 22px; color: var(--brand); margin-top: 2px; }
+
+/* Mini spreadsheet mock (bank statement use case) */
+.sheet { margin-top: var(--s-6); border-radius: var(--radius); overflow: hidden; background: var(--bg); box-shadow: 0 0 0 1px var(--border); }
+.sheet-scroll { overflow-x: auto; }
+.sheet table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+.sheet th { text-align: left; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: #fff; background: var(--brand); padding: 10px 14px; }
+.sheet td { padding: 10px 14px; border-top: 1px solid var(--bg-alt); color: var(--text); }
+.sheet td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.sheet td.raw { color: var(--text-3); font-family: var(--font-mono); font-size: 12px; }
+.sheet tr.check td { background: #fff4d6; }
+.sheet .how { font-size: 12px; color: var(--text-2); }
+.sheet .warn { font-size: 12px; color: #b00012; font-weight: 600; }
+.sheet-note { font-size: 12px; color: var(--text-3); padding: 10px 14px; border-top: 1px solid var(--bg-alt); }
+@media (max-width: 640px) {
+  /* Phones: each statement line becomes a small stacked card instead of a wide table */
+  .sheet table { min-width: 0; }
+  .sheet thead { display: none; }
+  .sheet tbody { display: block; }
+  .sheet tr { display: grid; grid-template-columns: 1fr auto; gap: 4px var(--s-3); padding: 12px 14px; border-top: 1px solid var(--bg-alt); }
+  .sheet tr.check { background: #fff4d6; }
+  .sheet td { display: block; padding: 0; border: 0; background: none !important; }
+  .sheet td:first-child { font-weight: 600; }
+  .sheet td.num { grid-column: 2; grid-row: 1; }
+  .sheet td.raw { grid-column: 1 / -1; overflow-wrap: anywhere; }
+  .sheet td:last-child { grid-column: 1 / -1; }
+}

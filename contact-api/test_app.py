@@ -31,6 +31,15 @@ class ValidateTests(unittest.TestCase):
             _, err, _ = app.validate(dict(GOOD, **bad), time.time())
             self.assertIn(msg, err.lower())
 
+    def test_every_form_option_is_accepted(self):
+        import re
+        html = open(__file__.replace("contact-api/test_app.py", "site/contact.html")).read()
+        options = [v for v in re.findall(r'<option value="([a-z-]+)"', html)]
+        self.assertTrue(options)
+        for value in options:
+            _, err, _ = app.validate(dict(GOOD, service=value), time.time())
+            self.assertIsNone(err, value)
+
     def test_header_injection_is_neutralised(self):
         f, _, _ = app.validate(dict(GOOD, name="Eve\r\nBcc: victim@example.com"), time.time())
         m = app.build_email(f, "me@gmail.com", "me@gmail.com")

@@ -14,9 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20261018" />
+  <link rel="stylesheet" href="css/style.css?v=20261019" />
   <script>document.documentElement.classList.add("js")</script>
-  <script src="js/main.js?v=20261018" defer></script>
+  <script src="js/main.js?v=20261019" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -46,7 +46,7 @@
       <div class="container">
         <span class="eyebrow reveal">Use cases</span>
         <h1 class="display reveal reveal-delay-1">See what can<br />run itself.</h1>
-        <p class="lede reveal reveal-delay-2">Seven examples of the automations we build. Each one is tailored to your tools and your way of working — these are a starting point, not a menu.</p>
+        <p class="lede reveal reveal-delay-2">Eight examples of the automations we build. Each one is tailored to your tools and your way of working — these are a starting point, not a menu.</p>
       </div>
     </section>
 
@@ -54,6 +54,7 @@
       <ul>
         <li><a href="#email-to-whatsapp">Email → WhatsApp alerts</a></li>
         <li><a href="#invoice-to-xero">Invoice → Xero</a></li>
+        <li><a href="#bank-statements">Bank statements</a></li>
         <li><a href="#whatsapp-assistant">WhatsApp assistant</a></li>
         <li><a href="#receipts">Receipts &amp; expenses</a></li>
         <li><a href="#daily-digest">Daily business digest</a></li>
@@ -81,6 +82,7 @@
         </div>
       </div>
     </section>
+
     <section class="usecase bg-alt" id="invoice-to-xero" aria-labelledby="invoice-to-xero-h">
       <div class="container">
         <div class="section-head reveal">
@@ -100,10 +102,44 @@
         </div>
       </div>
     </section>
-    <section class="usecase" id="whatsapp-assistant" aria-labelledby="whatsapp-assistant-h">
+
+    <section class="usecase" id="bank-statements" aria-labelledby="bank-statements-h">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Use case 03 · WhatsApp assistant</span>
+          <span class="eyebrow">Use case 03 · Bank statements → categories</span>
+          <h2 class="headline" id="bank-statements-h">Bank statements, categorised automatically.</h2>
+          <p class="lede" style="margin-top: 16px;">Drop in the CSV exports from the bank. Every transaction is cleaned up and matched to the right account in your chart of accounts — learned rules first, AI for anything new — and only the unusual lines are highlighted. Every correction is remembered, so next month is faster.</p>
+        </div>
+        <div class="flow reveal" role="list" aria-label="How this automation works">
+  <div role="listitem"><div class="flow-step"><span class="label">When</span><h3>Bank statements arrive</h3><p>CSV exports from your clients’ banks — different layouts handled.</p></div></div><div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  <div role="listitem"><div class="flow-step ai"><span class="label">AI does</span><h3>Cleans and categorises</h3><p>Strips card numbers and codes, then matches each line to your chart of accounts.</p></div></div><div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  <div role="listitem"><div class="flow-step"><span class="label">You get</span><h3>A ready-to-review workbook</h3><p>Every line coded, the odd ones highlighted, totals by account.</p></div></div>
+</div>
+        <div class="sheet reveal" role="img" aria-label="Example: raw bank statement lines with the account each was matched to; two unusual lines are highlighted for review.">
+  <div class="sheet-scroll" aria-hidden="true"><table>
+    <thead><tr><th>Date</th><th>From the bank</th><th>Amount</th><th>Matched to</th></tr></thead>
+    <tbody>
+      <tr><td>03/10</td><td class="raw">VISA PURCHASE OFFICEWORKS 4298 RYDE NS Card xx8619</td><td class="num">-93.96</td><td>453 Office Expenses<br /><span class="how">Learned rule</span></td></tr>
+      <tr><td>06/10</td><td class="raw">LINKT SYDNEY 2280 CHATSWOOD NSW Card xx4471</td><td class="num">-24.28</td><td>449 Motor Vehicle<br /><span class="how">Learned rule</span></td></tr>
+      <tr><td>08/10</td><td class="raw">DEBIT CARD PURCHASE QANTAS AIRWAYS RYDE</td><td class="num">-328.07</td><td>493 Travel - National<br /><span class="how">Keyword</span></td></tr>
+      <tr class="check"><td>12/10</td><td class="raw">REECE PLUMBING 9660 CHATSWOOD AU Card xx8019</td><td class="num">-4,875.40</td><td>310 Cost of Goods Sold<br /><span class="how">Learned rule</span><br /><span class="warn">Unusually large for this supplier</span></td></tr>
+      <tr class="check"><td>15/10</td><td class="raw">TRANSFER TO SAVINGS ACC 4471 NetBank</td><td class="num">-5,000.00</td><td>990 Transfer<br /><span class="how">Keyword</span><br /><span class="warn">Confirm it’s between own accounts</span></td></tr>
+      <tr><td>21/10</td><td class="raw">DEPOSIT PAYMENT FROM HARBOUR CAFE</td><td class="num">1,840.00</td><td>200 Sales<br /><span class="how">Learned rule</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sheet-note" aria-hidden="true">Example with illustrative data. Highlighted rows are the only ones that need a look.</p>
+</div>
+        <div class="before-after reveal">
+          <div><h3>Before</h3><p>Going through every statement line by line, every month, typing the same categories again and again.</p></div>
+          <div class="after"><h3>After</h3><p>Most lines coded automatically, a live summary by account, and only the highlighted lines to check.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="usecase bg-alt" id="whatsapp-assistant" aria-labelledby="whatsapp-assistant-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Use case 04 · WhatsApp assistant</span>
           <h2 class="headline" id="whatsapp-assistant-h">Bookings and requests, handled in chat.</h2>
           <p class="lede" style="margin-top: 16px;">Ask in plain words and the assistant checks availability, prepares the booking and shows you the price. Nothing is paid until you approve with a one-time code. We run one ourselves: it books sports courts and posts the confirmation to the team group.</p>
         </div>
@@ -119,10 +155,11 @@
         </div>
       </div>
     </section>
-    <section class="usecase bg-alt" id="receipts" aria-labelledby="receipts-h">
+
+    <section class="usecase" id="receipts" aria-labelledby="receipts-h">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Use case 04 · Receipts &amp; expenses</span>
+          <span class="eyebrow">Use case 05 · Receipts &amp; expenses</span>
           <h2 class="headline" id="receipts-h">Snap it. File it. Forget it.</h2>
           <p class="lede" style="margin-top: 16px;">Take a photo of a receipt or forward it by email. AI reads the merchant, amount and GST, picks the right category and files it in Xero with the image attached.</p>
         </div>
@@ -138,10 +175,11 @@
         </div>
       </div>
     </section>
-    <section class="usecase" id="daily-digest" aria-labelledby="daily-digest-h">
+
+    <section class="usecase bg-alt" id="daily-digest" aria-labelledby="daily-digest-h">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Use case 05 · Daily business digest</span>
+          <span class="eyebrow">Use case 06 · Daily business digest</span>
           <h2 class="headline" id="daily-digest-h">Your whole business, in one message.</h2>
           <p class="lede" style="margin-top: 16px;">Every morning a single WhatsApp message brings it together: cash position and overdue invoices from Xero, new enquiries, today’s bookings and anything that needs your attention.</p>
         </div>
@@ -157,10 +195,11 @@
         </div>
       </div>
     </section>
-    <section class="usecase bg-alt" id="lead-capture" aria-labelledby="lead-capture-h">
+
+    <section class="usecase" id="lead-capture" aria-labelledby="lead-capture-h">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Use case 06 · Enquiries &amp; leads</span>
+          <span class="eyebrow">Use case 07 · Enquiries &amp; leads</span>
           <h2 class="headline" id="lead-capture-h">Every enquiry answered. None forgotten.</h2>
           <p class="lede" style="margin-top: 16px;">Enquiries from your website, email or socials are summarised, logged in one place and acknowledged straight away. You get the details on WhatsApp, and follow-ups are scheduled so nothing slips.</p>
         </div>
@@ -176,10 +215,11 @@
         </div>
       </div>
     </section>
-    <section class="usecase" id="one-dashboard" aria-labelledby="one-dashboard-h">
+
+    <section class="usecase bg-alt" id="one-dashboard" aria-labelledby="one-dashboard-h">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Use case 07 · One dashboard</span>
+          <span class="eyebrow">Use case 08 · One dashboard</span>
           <h2 class="headline" id="one-dashboard-h">Everything you own and owe, in one place.</h2>
           <p class="lede" style="margin-top: 16px;">Your bank accounts, Xero, investment accounts, loans and property estimates are pulled together automatically and sorted into assets and liabilities — one live dashboard showing exactly where you stand, with a weekly summary on WhatsApp.</p>
         </div>
@@ -243,6 +283,7 @@
           <ul>
             <li><a href="use-cases.html#email-to-whatsapp">Email to WhatsApp</a></li>
             <li><a href="use-cases.html#invoice-to-xero">Invoices to Xero</a></li>
+            <li><a href="use-cases.html#bank-statements">Bank statements</a></li>
             <li><a href="use-cases.html#whatsapp-assistant">WhatsApp assistants</a></li>
             <li><a href="use-cases.html#one-dashboard">One dashboard</a></li>
             <li><a href="use-cases.html">All use cases</a></li>
